@@ -32,6 +32,20 @@ npm run dev                  # http://localhost:5173
 Corré los tests del backend con `npm test` (dentro de `backend/`) — no requieren
 base de datos, el test del flujo de creación mockea la transacción de Knex.
 
+### Crear un cliente de prueba
+
+No hay endpoint `POST /clients` (fuera de alcance del enunciado — ver
+[Decisiones](#decisiones)), así que hace falta insertar un cliente
+directamente en la base para poder probar la creación de solicitudes:
+
+```sql
+INSERT INTO client (full_name, dni, monthly_income)
+VALUES ('Jane Doe', '0801199012345', 25000.00);
+```
+
+El `client_id` resultante (probablemente `1` si es el primer insert) es el
+que se usa en el campo "Cliente (ID)" del formulario del frontend.
+
 ## Decisiones
 
 - **Monorepo**, `backend/` + `frontend/`, sin repos separados.
