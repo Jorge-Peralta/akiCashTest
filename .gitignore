@@ -1,0 +1,10 @@
+# Internal planning doc — not part of the deliverable
+PLAN.md
+
+# Local AI tooling (gentle-ai skill registry cache, Claude Code project settings)
+.atl/
+.claude/
+
+# OS
+.DS_Store
+Thumbs.db
